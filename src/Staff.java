@@ -1,2 +1,2 @@
-public class Staff {
+public class Staff extends Person {
 }
