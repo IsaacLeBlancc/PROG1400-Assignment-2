@@ -39,7 +39,21 @@ public class Accounting {
     }
 
     private int getValidYear() {
+        int year;
+        while (true) {
+            try {
+                year = Integer.parseInt(JOptionPane.showInputDialog("Enter student year (1-4):"));
+                if (year < 1 || year > 4) {
 
+                }
+                break;
+            } catch () {
+
+            } catch () {
+
+            }
+        }
+        return year;
     }
 
     private int getValidYearsOfService() {
