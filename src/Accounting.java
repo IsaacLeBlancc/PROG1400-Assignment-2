@@ -23,7 +23,9 @@ public class Accounting {
     }
 
     private void enterStudentInformation() {
-
+        String name = JOptionPane.showInputDialog("Enter student name:");
+        String address = JOptionPane.showInputDialog("Enter student address:");
+        int year = getValidYear();
     }
 
     private void enterStaffInformation() {
