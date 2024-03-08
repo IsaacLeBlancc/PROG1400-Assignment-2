@@ -5,4 +5,8 @@ public class Staff extends Person {
         super(name, address);
         this.yearsOfService = yearOfService;
     }
+
+    public int getYearsOfService() {
+        return yearsOfService;
+    }
 }

@@ -5,4 +5,8 @@ public class Student extends Person {
         super(name, address);
         this.yearsAttended = yearsAttended;
     }
+
+    public int getYearsAttended() {
+        return yearsAttended;
+    }
 }
