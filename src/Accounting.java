@@ -8,9 +8,9 @@ public class Accounting {
 
         while (choice != 2) {
             if (choice == 0) {
-                enterStudentInformation();
+                enterStudentInformation(students);
             } else if (choice == 1) {
-                enterStaffInformation();
+                enterStaffInformation(staffList);
             } else {
                 JOptionPane.showMessageDialog(null, "Invalid option", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -23,20 +23,22 @@ public class Accounting {
         }
     }
 
-    private void enterStudentInformation() {
+    private void enterStudentInformation(ArrayList<Student> students) {
         String name = JOptionPane.showInputDialog("Enter student name:");
         String address = JOptionPane.showInputDialog("Enter student address:");
         int year = getValidYear();
 
         Student student = new Student(name, address, year);
+        students.add(student); // Add the created student object to the list
     }
 
-    private void enterStaffInformation() {
+    private void enterStaffInformation(ArrayList<Staff> staffList) {
         String name = JOptionPane.showInputDialog("Enter staff name:");
         String address = JOptionPane.showInputDialog("Enter staff address:");
         int yearsOfService = getValidYearsOfService();
 
         Staff staff = new Staff(name, address, yearsOfService);
+        staffList.add(staff); // Add the created staff object to the list
     }
 
     private int getValidYear() {
@@ -105,5 +107,7 @@ public class Accounting {
                 "Outgoing: $" + String.format("%.2f", totalOutgoing) + "\n" +
                 "Incoming: $" + String.format("%.2f", totalIncoming) + "\n" +
                 "Total: $" + String.format("%.2f", total);
+
+        JOptionPane.showMessageDialog(null, results, "Financial Results", JOptionPane.INFORMATION_MESSAGE);
     }
 }
