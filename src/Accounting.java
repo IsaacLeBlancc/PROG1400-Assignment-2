@@ -99,5 +99,11 @@ public class Accounting {
         double totalOutgoing = totalStudentFees;
         double totalIncoming = totalStaffSalaries;
         double total = totalIncoming - totalOutgoing;
+
+        String results = studentDetails + staffDetails +
+                "\nResults:\n" +
+                "Outgoing: $" + String.format("%.2f", totalOutgoing) + "\n" +
+                "Incoming: $" + String.format("%.2f", totalIncoming) + "\n" +
+                "Total: $" + String.format("%.2f", total);
     }
 }
