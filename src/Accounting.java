@@ -44,20 +44,34 @@ public class Accounting {
             try {
                 year = Integer.parseInt(JOptionPane.showInputDialog("Enter student year (1-4):"));
                 if (year < 1 || year > 4) {
-
+                    throw new IllegalArgumentException();
                 }
                 break;
-            } catch () {
-
-            } catch () {
-
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 4.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         return year;
     }
 
     private int getValidYearsOfService() {
-
+        int yearsOfService;
+        while (true) {
+            try {
+                yearsOfService = Integer.parseInt(JOptionPane.showInputDialog("Enter years of service:"));
+                if (yearsOfService <= 0 || yearsOfService >= 30) {
+                    throw new IllegalArgumentException();
+                }
+                break;
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a number between 1 and 29.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        return yearsOfService;
     }
 
     private void runFinancialProcess() {
