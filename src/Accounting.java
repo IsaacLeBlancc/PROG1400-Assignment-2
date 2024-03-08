@@ -1,7 +1,8 @@
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 public class Accounting {
-    public void run() {
+    public void run(ArrayList<Student> students, ArrayList<Staff> staffList) {
         Object[] options = {"Student", "Staff", "Finish"};
         int choice = JOptionPane.showOptionDialog(null, "Select Student or Staff.", "Accounting App", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
@@ -18,7 +19,7 @@ public class Accounting {
         }
 
         if (choice == 2) {
-            runFinancialProcess();
+            runFinancialProcess(students, staffList);
         }
     }
 
@@ -74,7 +75,7 @@ public class Accounting {
         return yearsOfService;
     }
 
-    private void runFinancialProcess() {
+    private void runFinancialProcess(ArrayList<Student> students, ArrayList<Staff> staffList) {
         // Perform financial calculations here
         // Output the results in a JOptionPane or any other desired way
     }
