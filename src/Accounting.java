@@ -78,5 +78,12 @@ public class Accounting {
     private void runFinancialProcess(ArrayList<Student> students, ArrayList<Staff> staffList) {
         String studentDetails = "Students: [Total: " + students.size() + "]\n";
         double totalStudentFees = 0;
+
+        for (int i = 0; i < students.size(); i++) {
+            Student student = students.get(i);
+            double fee = student.calculateFees() / 2; // Invoice for half the fee amount
+            totalStudentFees += fee;
+            studentDetails += (i + 1) + ". name = " + student.getName() + ", address = " + student.getAddress() + ", year = " + student.getYearsAttended() + ", fee = $" + String.format("%.2f", fee) + "\n";
+        }
     }
 }
