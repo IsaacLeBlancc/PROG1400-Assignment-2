@@ -9,4 +9,9 @@ public class Student extends Person {
     public int getYearsAttended() {
         return yearsAttended;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", year: " + yearsAttended;
+    }
 }

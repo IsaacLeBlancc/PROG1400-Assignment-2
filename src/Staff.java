@@ -9,4 +9,9 @@ public class Staff extends Person {
     public int getYearsOfService() {
         return yearsOfService;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Years: " + yearsOfService;
+    }
 }
