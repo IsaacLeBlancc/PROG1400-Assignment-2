@@ -88,5 +88,12 @@ public class Accounting {
 
         String staffDetails = "Staff:[Total: " + staffList.size() + "]\n";
         double totalStaffSalaries = 0;
+
+        for (int i = 0; i < staffList.size(); i++) {
+            Staff staff = staffList.get(i);
+            double salary = staff.calculateSalary() / 26; // Bi-weekly payment
+            totalStaffSalaries += salary;
+            staffDetails += (i + 1) + ". name = " + staff.getName() + ", address = " + staff.getAddress() + ", years = " + staff.getYearsOfService() + ", fee = $" + String.format("%.2f", salary) + "\n";
+        }
     }
 }
