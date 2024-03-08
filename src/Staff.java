@@ -14,4 +14,10 @@ public class Staff extends Person {
     public String toString() {
         return super.toString() + ", Years: " + yearsOfService;
     }
+
+    public double calculateSalary() {
+        double baseSalary = 50000;
+        double stepIncrease = 500;
+        return baseSalary + (stepIncrease * yearsOfService);
+    }
 }
