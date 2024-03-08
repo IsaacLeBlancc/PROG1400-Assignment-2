@@ -1,9 +1,25 @@
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class Accounting {
     public void run() {
         Object[] options = {"Student", "Staff", "Finish"};
-        int userChoice = JOptionPane.showOptionDialog(null, "Select Student or Staff.", "Accounting App", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+        int choice = JOptionPane.showOptionDialog(null, "Select Student or Staff.", "Accounting App", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+        while (choice != 2) {
+            if (choice == 0) {
+                enterStudentInformation();
+            } else if (choice == 1) {
+                enterStaffInformation();
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid option", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+            choice = JOptionPane.showOptionDialog(null, "Select Student or Staff.", "Accounting App", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+        }
+
+        if (choice == 2) {
+            runFinancialProcess();
+        }
     }
 
     private void enterStudentInformation() {
@@ -20,5 +36,10 @@ public class Accounting {
 
     private int getValidYearsOfService() {
 
+    }
+
+    private void runFinancialProcess() {
+        // Perform financial calculations here
+        // Output the results in a JOptionPane or any other desired way
     }
 }
