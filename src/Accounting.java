@@ -81,7 +81,7 @@ public class Accounting {
 
         for (int i = 0; i < students.size(); i++) {
             Student student = students.get(i);
-            double fee = student.calculateFees() / 2; // Invoice for half the fee amount
+            double fee = student.calculateFees() / 2;
             totalStudentFees += fee;
             studentDetails += (i + 1) + ". name = " + student.getName() + ", address = " + student.getAddress() + ", year = " + student.getYearsAttended() + ", fee = $" + String.format("%.2f", fee) + "\n";
         }
@@ -91,9 +91,13 @@ public class Accounting {
 
         for (int i = 0; i < staffList.size(); i++) {
             Staff staff = staffList.get(i);
-            double salary = staff.calculateSalary() / 26; // Bi-weekly payment
+            double salary = staff.calculateSalary() / 26;
             totalStaffSalaries += salary;
             staffDetails += (i + 1) + ". name = " + staff.getName() + ", address = " + staff.getAddress() + ", years = " + staff.getYearsOfService() + ", fee = $" + String.format("%.2f", salary) + "\n";
         }
+
+        double totalOutgoing = totalStudentFees;
+        double totalIncoming = totalStaffSalaries;
+        double total = totalIncoming - totalOutgoing;
     }
 }
