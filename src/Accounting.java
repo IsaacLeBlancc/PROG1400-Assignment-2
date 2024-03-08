@@ -31,7 +31,11 @@ public class Accounting {
     }
 
     private void enterStaffInformation() {
+        String name = JOptionPane.showInputDialog("Enter staff name:");
+        String address = JOptionPane.showInputDialog("Enter staff address:");
+        int yearsOfService = getValidYearsOfService();
 
+        Staff staff = new Staff(name, address, yearsOfService);
     }
 
     private int getValidYear() {
