@@ -85,5 +85,8 @@ public class Accounting {
             totalStudentFees += fee;
             studentDetails += (i + 1) + ". name = " + student.getName() + ", address = " + student.getAddress() + ", year = " + student.getYearsAttended() + ", fee = $" + String.format("%.2f", fee) + "\n";
         }
+
+        String staffDetails = "Staff:[Total: " + staffList.size() + "]\n";
+        double totalStaffSalaries = 0;
     }
 }
