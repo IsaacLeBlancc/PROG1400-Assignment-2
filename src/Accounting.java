@@ -76,7 +76,7 @@ public class Accounting {
     }
 
     private void runFinancialProcess(ArrayList<Student> students, ArrayList<Staff> staffList) {
-        // Perform financial calculations here
-        // Output the results in a JOptionPane or any other desired way
+        String studentDetails = "Students: [Total: " + students.size() + "]\n";
+        double totalStudentFees = 0;
     }
 }
