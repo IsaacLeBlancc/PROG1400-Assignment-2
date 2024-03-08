@@ -14,4 +14,9 @@ public class Student extends Person {
     public String toString() {
         return super.toString() + ", year: " + yearsAttended;
     }
+
+    public double calculateFees() {
+        double baseFee = 3000;
+        return baseFee + (100 * (yearsAttended - 1));
+    }
 }
